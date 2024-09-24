@@ -1,0 +1,22 @@
+.search-box {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0;
+
+  input {
+    font-size: 1rem;
+    color: rgb(63, 63, 63);
+    width: 7rem;
+    border: none;
+    padding: 0;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: rgb(63, 63, 63);
+    }
+  }
+}
