@@ -1,17 +1,26 @@
-import React from "react";
+import React, { useContext, useMemo } from "react";
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import "./RadialChart.css";
+import { DataContext } from "../ContextProvider/DataProvider";
+import "./RadialChart.scss";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const RadialChart = ({ chartData }) => {
-  const { labelss, totalApplicants, notReviewed, colors } = chartData;
+const RadialChart = () => {
+  const { jobs, candidates } = useContext(DataContext);
+
+  const notReviewed = useMemo(() => {
+    return candidates.filter((candidate) => !candidate.reviewed).length;
+  }, [candidates]);
+
+  const totalApplicants = candidates.length;
+
+  const colors = ["rgba(192, 192, 192, 0.5)", "rgb(139, 90, 238)"];
   const notReviewedPercentage = (notReviewed / totalApplicants) * 100;
   const reviewedPercentage = 100 - notReviewedPercentage;
 
   const data = {
-    labels: [labelss[0], labelss[1]],
+    labels: ["Not Reviewed", "Total Applicants"],
     datasets: [
       {
         label: "Applicants",
@@ -62,7 +71,7 @@ const RadialChart = ({ chartData }) => {
               borderRadius: "3px",
             }}
           ></div>
-          <p>{labelss[1]}</p>
+          <p>{data.labels[1]}</p>
         </div>
         <div className="data-1">
           <div
@@ -73,7 +82,7 @@ const RadialChart = ({ chartData }) => {
               borderRadius: "3px",
             }}
           ></div>
-          <p>{labelss[0]}</p>
+          <p>{data.labels[0]}</p>
         </div>
       </div>
     </div>

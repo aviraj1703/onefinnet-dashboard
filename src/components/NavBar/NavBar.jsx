@@ -4,7 +4,7 @@ import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNone
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import AppsOutlinedIcon from "@mui/icons-material/AppsOutlined";
 import AdminIcon from "../../assets/admin.jpg";
-import "./NavBar.css";
+import "./NavBar.scss";
 
 export default function NavBar() {
   return (
@@ -13,7 +13,10 @@ export default function NavBar() {
       <div className="widgets">
         <div className="search-box">
           <div className="icon-common">
-            <SearchOutlinedIcon className="search" sx={{ color: "rgb(63, 63, 63)" }} />
+            <SearchOutlinedIcon
+              className="search"
+              sx={{ color: "rgb(63, 63, 63)" }}
+            />
           </div>
           <input placeholder="Start searching" type="text" />
         </div>

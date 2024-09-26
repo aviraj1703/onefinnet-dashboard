@@ -8,7 +8,7 @@ import {
   TableRow,
   Paper,
 } from "@mui/material";
-import "./CandidateTable.css";
+import "./CandidateTable.scss";
 
 const TableForm = ({ candidates }) => {
   return (
@@ -45,7 +45,7 @@ const TableForm = ({ candidates }) => {
                 <div className="name-cell">
                   <span>{index + 1}</span>
                   <div className="sub-name-cell">
-                    <span>
+                    <span style={{ fontSize: "0.8rem" }}>
                       <strong>{candidate.name}</strong>
                     </span>
                     <span style={{ fontSize: "0.7rem" }}>
@@ -54,9 +54,15 @@ const TableForm = ({ candidates }) => {
                   </div>
                 </div>
               </TableCell>
-              <TableCell style={{ fontSize: "0.7rem" }}>{candidate.job}</TableCell>
-              <TableCell>{candidate.rating}</TableCell>
-              <TableCell>{candidate.appliedDate}</TableCell>
+              <TableCell style={{ fontSize: "0.7rem" }}>
+                {candidate.job}
+              </TableCell>
+              <TableCell style={{ fontSize: "0.8rem" }}>
+                {candidate.rating}
+              </TableCell>
+              <TableCell style={{ fontSize: "0.8rem" }}>
+                {candidate.appliedDate}
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

@@ -1,0 +1,39 @@
+.job-bar-chart {
+  width: 48%;
+  height: 87%;
+  box-sizing: border-box;
+  border: 1px solid silver;
+  border-radius: 20px;
+  padding: 0 2%;
+  gap: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  overflow-y: auto;
+
+  h4 {
+    margin: 2% 0;
+    padding: 0;
+  }
+
+  .categories {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1%;
+    padding-top: 0;
+    gap: 20px;
+
+    .category {
+      width: fit-content;
+      padding-left: 1%;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-wrap: wrap;
+      box-sizing: border-box;
+    }
+  }
+}

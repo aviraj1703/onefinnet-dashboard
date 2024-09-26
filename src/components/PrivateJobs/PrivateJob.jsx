@@ -1,6 +1,6 @@
 import React from "react";
 import privateJobBoardImg from "../../assets/private_job_board.png";
-import "./PrivateJob.css";
+import "./PrivateJob.scss";
 
 const PrivateJob = () => {
   return (

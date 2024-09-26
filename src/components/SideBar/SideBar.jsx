@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import KeyboardTabOutlinedIcon from "@mui/icons-material/KeyboardTabOutlined";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import "./SideBar.css";
+import "./SideBar.scss";
 
 const SideBar = () => {
   const [isOpen, setIsOpen] = useState(true);

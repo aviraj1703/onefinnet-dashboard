@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useContext, useMemo } from "react";
 import BusinessCenterOutlinedIcon from "@mui/icons-material/BusinessCenterOutlined";
 import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
 import LocalActivityOutlinedIcon from "@mui/icons-material/LocalActivityOutlined";
-import "./JobData.css"
+import { DataContext } from "../ContextProvider/DataProvider";
+import "./JobData.scss";
 
 const JobData = () => {
+  const { jobs, candidates } = useContext(DataContext);
+
+  const totalJobs = useMemo(() => {
+    return jobs.reduce((acc, job) => acc + job.vacancies, 0);
+  }, [jobs]);
+
+  const totalApplicants = candidates.length;
+
   return (
     <div className="job-data">
       <div className="section1">
@@ -15,15 +24,20 @@ const JobData = () => {
               padding: "3%",
               borderRadius: "100%",
               width: "fit-content",
-              marginTop: "2px"
+              marginTop: "2px",
             }}
           >
             <BusinessCenterOutlinedIcon
-              sx={{ color: "white", height: "1rem", width: "1.4rem", marginTop: "3px" }}
+              sx={{
+                color: "white",
+                height: "1rem",
+                width: "1.4rem",
+                marginTop: "3px",
+              }}
             />
           </div>
           <div className="text">
-            <h2>15</h2>
+            <h2>{totalJobs}</h2>
             <p>Total Jobs</p>
           </div>
         </div>
@@ -34,15 +48,20 @@ const JobData = () => {
               padding: "3%",
               borderRadius: "100%",
               width: "fit-content",
-              marginTop: "2px"
+              marginTop: "2px",
             }}
           >
             <PeopleAltOutlinedIcon
-              sx={{ color: "white", height: "1rem", width: "1.4rem", marginTop: "3px" }}
+              sx={{
+                color: "white",
+                height: "1rem",
+                width: "1.4rem",
+                marginTop: "3px",
+              }}
             />
           </div>
           <div className="text">
-            <h2>1500</h2>
+            <h2>{totalApplicants}</h2>
             <p>Applicants</p>
           </div>
         </div>
@@ -55,11 +74,16 @@ const JobData = () => {
               padding: "3%",
               borderRadius: "100%",
               width: "fit-content",
-              marginTop: "2px"
+              marginTop: "2px",
             }}
           >
             <LocalActivityOutlinedIcon
-              sx={{ color: "white", height: "1rem", width: "1.4rem", marginTop: "3px" }}
+              sx={{
+                color: "white",
+                height: "1rem",
+                width: "1.4rem",
+                marginTop: "3px",
+              }}
             />
           </div>
           <div className="text">

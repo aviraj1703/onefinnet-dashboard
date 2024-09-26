@@ -19,15 +19,18 @@ ChartJS.register(
   Legend
 );
 
-const JobBarChart = ({ data }) => {
+const JobBarChart = ({ data, maxJobs }) => {
+  const stepSize = Math.ceil(maxJobs / 10);
+
   const options = {
     indexAxis: "y",
     scales: {
       x: {
         min: 0,
-        max: 275,
+        max: maxJobs,
         grid: {
-          color: (context) => (context.tick.value === 0 ? "gray" : "silver"),
+          color: (context) =>
+            context.tick.value === 0 ? "gray" : "rgba(192, 192, 192, 0.5)",
           drawBorder: false,
         },
         ticks: {
@@ -35,7 +38,7 @@ const JobBarChart = ({ data }) => {
           font: {
             weight: "normal",
           },
-          stepSize: 25,
+          stepSize: stepSize,
           autoSkip: false,
         },
       },
@@ -60,7 +63,6 @@ const JobBarChart = ({ data }) => {
     <div
       style={{
         width: "100%",
-        marginTop: "1%",
         height: "67%",
       }}
     >

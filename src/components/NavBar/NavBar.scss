@@ -22,15 +22,17 @@
   }
 }
 
-.search:hover {
-  color: blue;
+.search {
+  &:hover {
+    color: blue;
+  }
 }
 
 .navbar {
   width: 100vw;
   height: 6vh;
   padding-left: 2%;
-  padding-right: 4%;
+  padding-right: 5%;
   margin: 0%;
   background-color: white;
   border-bottom: 1px solid silver;
@@ -38,61 +40,71 @@
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
+
+  h2 {
+    font-weight: 700;
+    font-size: 1.3rem;
+
+    &:hover {
+      cursor: pointer;
+      color: blue;
+    }
+  }
+
+  .widgets {
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 2px;
+    box-sizing: border-box;
+  }
 }
 
-.navbar h2 {
-  font-weight: 700;
-  font-size: 1.3rem;
-}
-
-.navbar h2:hover {
-  cursor: pointer;
-  color: blue;
-}
-
-.navbar .widgets {
-  display: flex;
-  width: 20%;
-  justify-content: space-between;
-  align-items: center;
-  gap: 15px;
-  padding: 2px;
-  box-sizing: border-box;
-}
 .profile {
   padding: 1px;
+
+  &:hover {
+    cursor: pointer;
+    border: 1px solid silver;
+    border-radius: 100%;
+  }
 }
-.profile:hover {
-  cursor: pointer;
-  border: 1px solid silver;
-  border-radius: 100%;
-}
+
 .icon-common {
   cursor: pointer;
-  padding: 1% 1.5%;
+  padding: 1.5% 1.2% 0% 1.2%;
   border-radius: 100%;
+
+  &:hover {
+    background-color: rgb(237, 237, 251);
+  }
 }
-.icon-common:hover {
-  background-color: rgb(237, 237, 251);
-}
+
 .settings {
   transition: transform 0.5s;
+
+  &:hover {
+    transform: rotate(90deg);
+    color: blue;
+  }
 }
-.settings:hover {
-  transform: rotate(90deg);
-  color: blue;
-}
+
 .notification {
   transition: transform 0.5s;
+
+  &:hover {
+    color: blue;
+    transform: scale(0.9);
+  }
 }
-.notification:hover {
-  color: blue;
-  transform: scale(0.9);
-}
+
 .Appbar {
   transition: transform 0.5s;
-}
-.Appbar:hover {
-  color: blue;
-  transform: scale(0.9);
+
+  &:hover {
+    color: blue;
+    transform: scale(0.9);
+  }
 }

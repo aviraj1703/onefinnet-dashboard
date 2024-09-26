@@ -1,49 +1,39 @@
 import * as React from "react";
-import "./CandidateTable.css";
+import "./CandidateTable.scss";
 import TableForm from "./TableForm";
+import { DataContext } from "../ContextProvider/DataProvider";
+import { useContext } from "react";
+import { useMemo } from "react";
 
 export default function CandidateTable() {
-  const candidates = [
-    {
-      name: "John Doe",
-      email: "john.doe@example.com",
-      job: "Software Engineer",
-      rating: 4.5,
-      appliedDate: "2024-09-01",
-    },
-    {
-      name: "Jane Smith",
-      email: "jane.smith@example.com",
-      job: "Product Manager",
-      rating: 4.0,
-      appliedDate: "2024-09-02",
-    },
-    {
-      name: "Emily Johnson",
-      email: "emily.johnson@example.com",
-      job: "Data Scientist",
-      rating: 5.0,
-      appliedDate: "2024-09-03",
-    },
-    {
-      name: "Emily Johnson",
-      email: "emily.johnson@example.com",
-      job: "Data Scientist",
-      rating: 5.0,
-      appliedDate: "2024-09-03",
-    },
-    {
-      name: "Emily Johnson",
-      email: "emily.johnson@example.com",
-      job: "Data Scientist",
-      rating: 5.0,
-      appliedDate: "2024-09-03",
-    },
-  ];
+  const { jobs, candidates } = useContext(DataContext);
+
+  const applicants = useMemo(() => {
+    const filteredCandidates = candidates.filter((candidate) => {
+      const appliedDate = new Date(candidate.applied);
+      return appliedDate.getUTCDate() === 26 && candidate.reviewed;
+    });
+
+    return filteredCandidates.map((candidate) => {
+      const job = jobs[candidate.jobId - 1];
+      return {
+        name: candidate.name,
+        email: candidate.email,
+        appliedDate: new Date(candidate.applied).toLocaleDateString("en-US", {
+          month: "long",
+          day: "numeric",
+          year: "numeric",
+        }),
+        rating: candidate.rating / 10,
+        job: job ? job.title : null,
+      };
+    });
+  }, [candidates, jobs]);
+
   return (
     <div className="candidate-table">
       <h4>Latest Candidates</h4>
-      <TableForm candidates={candidates} />
+      <TableForm candidates={applicants} />
     </div>
   );
 }
