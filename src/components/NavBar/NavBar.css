@@ -2,10 +2,11 @@
   display: flex;
   justify-content: start;
   align-items: center;
-  gap: 0;
+  gap: 3px;
+  margin: 0%;
 
   input {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: rgb(63, 63, 63);
     width: 7rem;
     border: none;
@@ -19,4 +20,79 @@
       color: rgb(63, 63, 63);
     }
   }
+}
+
+.search:hover {
+  color: blue;
+}
+
+.navbar {
+  width: 100vw;
+  height: 6vh;
+  padding-left: 2%;
+  padding-right: 4%;
+  margin: 0%;
+  background-color: white;
+  border-bottom: 1px solid silver;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.navbar h2 {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.navbar h2:hover {
+  cursor: pointer;
+  color: blue;
+}
+
+.navbar .widgets {
+  display: flex;
+  width: 20%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 2px;
+  box-sizing: border-box;
+}
+.profile {
+  padding: 1px;
+}
+.profile:hover {
+  cursor: pointer;
+  border: 1px solid silver;
+  border-radius: 100%;
+}
+.icon-common {
+  cursor: pointer;
+  padding: 1% 1.5%;
+  border-radius: 100%;
+}
+.icon-common:hover {
+  background-color: rgb(237, 237, 251);
+}
+.settings {
+  transition: transform 0.5s;
+}
+.settings:hover {
+  transform: rotate(90deg);
+  color: blue;
+}
+.notification {
+  transition: transform 0.5s;
+}
+.notification:hover {
+  color: blue;
+  transform: scale(0.9);
+}
+.Appbar {
+  transition: transform 0.5s;
+}
+.Appbar:hover {
+  color: blue;
+  transform: scale(0.9);
 }

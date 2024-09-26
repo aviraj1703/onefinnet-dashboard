@@ -1,4 +1,5 @@
 import "./App.css";
+import Dashboard from "./components/Dashboard/Dashboard";
 import NavBar from "./components/NavBar/NavBar";
 import SideBar from "./components/SideBar/SideBar";
 
@@ -6,7 +7,10 @@ function App() {
   return (
     <>
       <NavBar />
-      <SideBar />
+      <div className="Home">
+        <SideBar />
+        <Dashboard />
+      </div>
     </>
   );
 }

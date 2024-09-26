@@ -1,0 +1,20 @@
+.private-job {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-direction: column;
+    border: 1px solid rgb(198, 199, 200);
+    border-radius: 10px;
+    padding: 0.5%;
+    gap: 2px;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.private-job p {
+    margin: 0%;
+    padding: 0%;
+}
