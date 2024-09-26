@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+# Why ReactJS? 
+  - Single Page Web Application
+  - Client Side rendering
+  - Simplicity and Familiarity
+  - Static site without SSR (Server Side Rendering)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Components
+  - 3 main components: NavBar, SideBar and Dashboard
+  - Styling: SCSS
+  - Icons and Table: Material UI
+  - Bar charts and Circular Bar charts: chart.js
+  - API call: axios
+  - Data distribution in DOM Tree: Using context API
+  - Loader from MUI is added before data fetching
 
-## Available Scripts
+# API calls
+  - 2 dummy APIs are created using _mockapi.io_
+    1. Jobs data (API 1)
+       - 3 types of jobs are there with number of vacancies and total jobs.
+       - Total jobs: Jobs available
+       - Vacancies: Jobs posted
+    2. Candidates data (API 2)
+       - Total 100 candidates are there each are mapped with particular job via id
+       - Another Data is created out of this with job title for Table
+       - Fields: Name, Email, Ranking, Date of Application, Job ID
+  - Using these 2 APIs everything is handled and made dynamic.
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Hooks
+  - useContext(): For API data distribution
+  - useState(): State Management
+  - useEffect(): API calls and data creation
+  - useMemo(): For calculations which are not required to render each time there is change in component
